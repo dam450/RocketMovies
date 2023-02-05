@@ -6,6 +6,8 @@ export const Container = styled.header`
   height: 11.6rem;
   width: 100%;
 
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_700};
 
   display: flex;
@@ -23,6 +25,8 @@ export const Container = styled.header`
 
     display: flex;
     flex-wrap: nowrap;
+
+    align-items: baseline;
 
     img {
       height: 3.2rem;
@@ -46,8 +50,9 @@ export const Profile = styled.div`
       font-size: 1.4rem;
       line-height: 1.8rem;
       color: ${({ theme }) => theme.COLORS.GRAY_300};
+      text-align: right;
     }
-    
+
     strong {
       font-size: 1.4rem;
       line-height: 1.8rem;

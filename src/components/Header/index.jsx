@@ -1,4 +1,7 @@
-import { Container, Profile } from "./styles.js";
+import { FiSearch } from 'react-icons/fi'
+
+import { Input } from '@/components/Input';
+import { Container, Profile } from './styles';
 
 export function Header() {
   return (
@@ -7,7 +10,7 @@ export function Header() {
         <img src='clapperboard.svg' alt='logo' />
         RocketMovies
       </h1>
-      <input type='text' />
+      <Input placeholder='Pesquisar pelo título' icon={FiSearch} />
       <Profile>
         <div>
           <a href='#profile' title='abrir perfil'>
@@ -18,9 +21,9 @@ export function Header() {
           </a>
         </div>
         <a title='abrir perfil' href='#profile'>
-          <img src='https://github.com/dam450.png' />
+          <img src='https://github.com/dam450.png' alt='imagem do usuário' />
         </a>
       </Profile>
     </Container>
   );
-} 
+}
