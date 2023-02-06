@@ -1,6 +1,9 @@
 import { Header } from '@/components/Header';
 import { Stars } from '@/components/Stars';
+import { Tag } from '@/components/Tag';
 import { UserPic } from '@/components/UserPic';
+
+
 
 import { FiArrowLeft, FiClock } from 'react-icons/fi';
 import { Container, Content, Title, Author, Tags } from './styles';
@@ -19,16 +22,19 @@ export function Preview() {
         </Title>
         <Author>
           <span>
-            <UserPic
-              size={16} src='https://github.com/dam450.png'
-              alt='imagem do usuário' />
+            <UserPic size={16} src='https://github.com/dam450.png' alt='imagem do usuário' />
             Por Evandro Damaso
           </span>
           <span>
             <FiClock size={16} /> 23/05/22 às 08:00
           </span>
         </Author>
-        <Tags>[Ficção] [Científica] [Drama] [Família]</Tags>
+        <Tags>
+          <Tag value='Ficção' />
+          <Tag value={'Científica'} />
+          <Tag value={'Drama'} />
+          <Tag value={'Família'} />
+        </Tags>
         <p>
           Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data
           desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de
