@@ -1,6 +1,8 @@
 import { FiSearch } from 'react-icons/fi'
 
 import { Input } from '@/components/Input';
+import { UserPic } from '@/components/UserPic';
+
 import { Container, Profile } from './styles';
 
 export function Header() {
@@ -21,7 +23,7 @@ export function Header() {
           </a>
         </div>
         <a title='abrir perfil' href='#profile'>
-          <img src='https://github.com/dam450.png' alt='imagem do usuário' />
+          <UserPic src='https://github.com/dam450.png' alt='imagem do usuário' size={64}/>
         </a>
       </Profile>
     </Container>

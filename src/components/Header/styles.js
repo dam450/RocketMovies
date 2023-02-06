@@ -60,10 +60,10 @@ export const Profile = styled.div`
     }
   }
 
-  img {
+  /* img {
     width: 6.4rem;
     height: 6.4rem;
     border-radius: 50%;
     border: 1px solid ${({ theme }) => theme.COLORS.GRAY_700};
-  }
+  } */
 `;
