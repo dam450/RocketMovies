@@ -40,6 +40,12 @@ export const Profile = styled.div`
   align-items: center;
   gap: 0.9rem;
 
+  *:focus-visible {
+    outline: 1px solid ${({ theme }) => theme.COLORS.GRAY_500};
+    outline-offset: 3px;
+    border-radius: 10px;
+  }
+
   > div {
     display: flex;
     flex-direction: column;

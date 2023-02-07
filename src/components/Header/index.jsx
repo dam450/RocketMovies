@@ -2,6 +2,7 @@ import { FiSearch } from 'react-icons/fi'
 
 import { Input } from '@/components/Input';
 import { UserPic } from '@/components/UserPic';
+import Logo from '@/assets/clapperboard.svg'
 
 import { Container, Profile } from './styles';
 
@@ -9,7 +10,7 @@ export function Header() {
   return (
     <Container>
       <h1>
-        <img src='clapperboard.svg' alt='logo' />
+        <img src={Logo} alt='logo' />
         RocketMovies
       </h1>
       <Input placeholder='Pesquisar pelo título' icon={FiSearch} />
