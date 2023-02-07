@@ -5,8 +5,8 @@ export function Stars({...rest}) {
     <Container
       start={0}
       stop={5}
-      emptySymbol={<img src='./hollow-star.svg' className='icon' />}
-      fullSymbol={<img src='./filled-star.svg' className='icon' />}
+      emptySymbol={<img src='/hollow-star.svg' className='icon' />}
+      fullSymbol={<img src='/filled-star.svg' className='icon' />}
       // onChange={(rate) => alert(rate)}
       {...rest}
     />
