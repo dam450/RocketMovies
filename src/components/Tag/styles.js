@@ -12,3 +12,7 @@ export const Container = styled.span`
   padding: 0.8rem 1.6rem;
   margin-right: 0.8rem;
 `;
+
+export const ContainerAlt = styled(Container)`
+  background: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+`;

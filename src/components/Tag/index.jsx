@@ -1,9 +1,17 @@
-import { Container } from './styles';
+import { Container, ContainerAlt } from './styles';
 
-export function Tag({ value }) {
+export function Tag({ value, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       {value}
     </Container>
+  )
+}
+
+export function TagGray({ value, ...rest }) {
+  return (
+    <ContainerAlt {...rest}>
+      {value}
+    </ContainerAlt>
   )
 }
