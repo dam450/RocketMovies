@@ -1,4 +1,5 @@
 import { FiSearch } from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 
 import { Input } from '@/components/Input';
 import { UserPic } from '@/components/UserPic';
@@ -16,16 +17,16 @@ export function Header() {
       <Input placeholder='Pesquisar pelo título' icon={FiSearch} />
       <Profile>
         <div>
-          <a href='#profile' title='abrir perfil'>
+          <Link title='Abrir perfil' to='#profile'>
             <strong>Evandro Damaso</strong>
-          </a>
-          <a href='#logout' title='fazer logout'>
+          </Link>
+          <Link title='Fazer logout' to='#logout'>
             sair
-          </a>
+          </Link>
         </div>
-        <a title='abrir perfil' href='#profile'>
-          <UserPic src='https://github.com/dam450.png' alt='imagem do usuário' size={64}/>
-        </a>
+        <Link title='Abrir perfil' to='#profile'>
+          <UserPic src='https://github.com/dam450.png' alt='imagem do usuário' size={64} />
+        </Link>
       </Profile>
     </Container>
   );

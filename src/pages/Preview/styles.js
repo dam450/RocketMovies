@@ -29,9 +29,8 @@ export const Content = styled.main`
     color: ${({theme}) => theme.COLORS.RED_100}; 
     display: inline-flex;
     align-items: center;
-    
 
-    margin-bottom: 2.4rem;
+    margin: 3px 3px 2.4rem;
   }
 
   > p {

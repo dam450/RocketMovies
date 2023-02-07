@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.main`
@@ -47,7 +48,7 @@ export const MovieList = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const Movie = styled.a`
+export const Movie = styled(Link)`
   *:focus-visible {
     outline: 1px solid ${({ theme }) => theme.COLORS.GRAY_500};
     outline-offset: 2px;

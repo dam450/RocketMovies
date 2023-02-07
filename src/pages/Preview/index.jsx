@@ -6,6 +6,7 @@ import { UserPic } from '@/components/UserPic';
 
 
 import { FiArrowLeft, FiClock } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import { Container, Content, Title, Author, Tags } from './styles';
 
 export function Preview() {
@@ -13,10 +14,10 @@ export function Preview() {
     <Container>
       <Header />
       <Content>
-        <a>
+        <Link to="/">
           <FiArrowLeft size={16} />
           Voltar
-        </a>
+        </Link>
         <Title>
           Interestellar <Stars onChange={(rate) => alert(rate)} readonly initialRating={4} />
         </Title>

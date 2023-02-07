@@ -18,7 +18,7 @@ export function Home() {
         </header>
 
         <MovieList>
-          <Movie href='#'>
+          <Movie to='/preview'>
             <h3>Interestellar</h3>
             <Stars className='small' readonly initialRating={4} />
             <p className='fade'>
@@ -46,7 +46,7 @@ export function Home() {
             <TagGray value={'Drama'} />
             <TagGray value={'Família'} />
           </Movie>
-          <Movie href='#'>
+          <Movie to='/preview'>
             <h3>Interestellar</h3>
             <Stars className='small' readonly initialRating={4} />
             <p>
@@ -72,7 +72,7 @@ export function Home() {
             </p>
             <TagGray value={'Ficção Científica'} />
           </Movie>
-          <Movie href='#'>
+          <Movie to='/preview'>
             <h3>Interestellar</h3>
             <Stars className='small' readonly initialRating={4} />
             <p>
