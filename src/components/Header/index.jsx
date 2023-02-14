@@ -20,7 +20,7 @@ export function Header() {
           <Link title='Abrir perfil' to='/profile'>
             <strong>Evandro Damaso</strong>
           </Link>
-          <Link title='Fazer logout' to='#logout'>
+          <Link title='Fazer logout' to='/signin'>
             sair
           </Link>
         </div>
