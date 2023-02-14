@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
@@ -33,7 +33,7 @@ export const Content = styled.main`
       font-size: 32px;
       line-height: 42px;
 
-      color: ${({ theme }) => theme.COLORS.WHITE_900}; 
+      color: ${({ theme }) => theme.COLORS.WHITE_900};
     }
   }
 `;
@@ -61,7 +61,7 @@ export const Movie = styled(Link)`
   height: fit-content;
 
   background: ${({ theme }) => theme.COLORS.BACKGROUND_600};
-  color: #999591; //GRAY_400
+  color: ${({ theme }) => theme.COLORS.GRAY_400};
 
   > p {
     height: 4rem;
@@ -95,7 +95,11 @@ export const Movie = styled(Link)`
     right: 0;
     width: 50%;
     height: 1.2em;
-    background: linear-gradient(to right, #ffffff00, ${({ theme }) => theme.COLORS.BACKGROUND_600} 95%);
+    background: linear-gradient(
+      to right,
+      #ffffff00,
+      ${({ theme }) => theme.COLORS.BACKGROUND_600} 95%
+    );
   }
 
   > .small {
@@ -112,4 +116,4 @@ export const Movie = styled(Link)`
 
     color: ${({ theme }) => theme.COLORS.WHITE_200};
   }
-`;
+`
