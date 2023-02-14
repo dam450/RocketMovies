@@ -64,7 +64,7 @@ export const Movie = styled(Link)`
   color: ${({ theme }) => theme.COLORS.GRAY_400};
 
   > p {
-    height: 4rem;
+    /* height: 4rem; */
     width: 100%;
 
     overflow: hidden;
@@ -72,7 +72,7 @@ export const Movie = styled(Link)`
     text-overflow: ellipsis;
 
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 
     margin-bottom: 2rem;
@@ -100,6 +100,7 @@ export const Movie = styled(Link)`
       #ffffff00,
       ${({ theme }) => theme.COLORS.BACKGROUND_600} 95%
     );
+    opacity: 0.8;
   }
 
   > .small {
