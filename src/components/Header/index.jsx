@@ -17,14 +17,14 @@ export function Header() {
       <Input placeholder='Pesquisar pelo título' icon={FiSearch} />
       <Profile>
         <div>
-          <Link title='Abrir perfil' to='#profile'>
+          <Link title='Abrir perfil' to='/profile'>
             <strong>Evandro Damaso</strong>
           </Link>
           <Link title='Fazer logout' to='#logout'>
             sair
           </Link>
         </div>
-        <Link title='Abrir perfil' to='#profile'>
+        <Link title='Abrir perfil' to='/profile'>
           <UserPic src='https://github.com/dam450.png' alt='imagem do usuário' size={64} />
         </Link>
       </Profile>
