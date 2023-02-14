@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  * {
-    /* border: 1px solid green; */
-  }
 
   width: 100%;
   height: 100vh;
@@ -26,7 +23,7 @@ export const Content = styled.main`
   overflow-y: auto;
 
   > a:first-child {
-    color: ${({theme}) => theme.COLORS.RED_100}; 
+    color: ${({theme}) => theme.COLORS.RED_100};
     display: inline-flex;
     align-items: center;
 
