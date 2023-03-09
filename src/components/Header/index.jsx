@@ -4,10 +4,18 @@ import { Link } from 'react-router-dom';
 import { Input } from '@/components/Input';
 import { UserPic } from '@/components/UserPic';
 import Logo from '@/assets/clapperboard.svg'
+import { useAuth } from '@/hooks/auth'
 
 import { Container, Profile } from './styles';
 
 export function Header() {
+  const { signOut } = useAuth()
+
+  function handleLogout() {
+    console.log('logout')
+    signOut()
+  }
+
   return (
     <Container>
       <h1>
@@ -20,9 +28,9 @@ export function Header() {
           <Link title='Abrir perfil' to='/profile'>
             <strong>Evandro Damaso</strong>
           </Link>
-          <Link title='Fazer logout' to='/signin'>
+          <button title='Fazer logout' to='/signin' onClick={handleLogout} >
             sair
-          </Link>
+          </button>
         </div>
         <Link title='Abrir perfil' to='/profile'>
           <UserPic src='https://github.com/dam450.png' alt='imagem do usuário' size={64} />
