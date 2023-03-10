@@ -52,11 +52,14 @@ export const Profile = styled.div`
     align-items: flex-end;
     justify-items: center;
 
-    a {
+    button {
       font-size: 1.4rem;
       line-height: 1.8rem;
       color: ${({ theme }) => theme.COLORS.GRAY_300};
       text-align: right;
+
+      background: none;
+      border: none;
     }
 
     strong {
