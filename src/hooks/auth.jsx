@@ -35,6 +35,23 @@ function AuthProvider({ children }) {
     setData({})
   }
 
+  async function updateUser({ user }) {
+    try {
+
+      await api.put(`/users`, user)
+      localStorage.setItem('@rocketmovies:user', JSON.stringify(user))
+      setData({ user, token: data.token })
+
+    } catch (error) {
+      console.log(error)
+      if (error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert('Não foi possível alterar seu perfil')
+      }
+    }
+  }
+
   useEffect(() => {
     const token = localStorage.getItem('@rocketmovies:token')
     const user = JSON.parse(localStorage.getItem('@rocketmovies:user'))
@@ -43,12 +60,13 @@ function AuthProvider({ children }) {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
       setData({ token, user })
     }
-   }, [])
+  }, [])
 
   return (
     <AuthContext.Provider value={{
       signIn,
       signOut,
+      updateUser,
       user: data.user
     }} >
       {children}
@@ -58,7 +76,7 @@ function AuthProvider({ children }) {
 
 /**
  * Contexto de autenticação
- * @returns ({ signIn, signOut, user })
+ * @returns ({ signIn, signOut, updateUser, user })
  */
 function useAuth() {
   const context = useContext(AuthContext)
