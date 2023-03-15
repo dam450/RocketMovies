@@ -6,36 +6,39 @@ import { UserPic } from '@/components/UserPic';
 import Logo from '@/assets/clapperboard.svg'
 import { useAuth } from '@/hooks/auth'
 
+import { getAvatarURL } from '@/utils/getAvatarURL'
+
 import { Container, Profile } from './styles';
 
 export function Header() {
-  const { signOut } = useAuth()
+  const { signOut, user } = useAuth()
 
   function handleLogout() {
-    console.log('logout')
     signOut()
   }
+
+  const avatarURL = getAvatarURL(user.avatar)
 
   return (
     <Container>
       <h1>
-        <img src={Logo} alt='logo' />
+        <img src={Logo} alt="logo" />
         RocketMovies
       </h1>
-      <Input placeholder='Pesquisar pelo título' icon={FiSearch} />
+      <Input type='search' placeholder="Pesquisar pelo título" icon={FiSearch} />
       <Profile>
         <div>
-          <Link title='Abrir perfil' to='/profile'>
-            <strong>Evandro Damaso</strong>
+          <Link title="Abrir perfil" to="/profile">
+            <strong>{user.name}</strong>
           </Link>
-          <button title='Fazer logout' to='/signin' onClick={handleLogout} >
+          <button title="Fazer logout" to="/signin" onClick={handleLogout}>
             sair
           </button>
         </div>
-        <Link title='Abrir perfil' to='/profile'>
-          <UserPic src='https://github.com/dam450.png' alt='imagem do usuário' size={64} />
+        <Link title="Abrir perfil" to="/profile">
+          <UserPic src={avatarURL} alt={user.name} size={64} />
         </Link>
       </Profile>
     </Container>
-  );
+  )
 }
