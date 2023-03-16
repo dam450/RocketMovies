@@ -22,7 +22,7 @@ export const Content = styled.main`
   height: 70vh;
   overflow-y: auto;
 
-  > a:first-child {
+  > a {
     color: ${({theme}) => theme.COLORS.RED_100};
     display: inline-flex;
     align-items: center;
@@ -38,6 +38,8 @@ export const Content = styled.main`
     display: flex;
     align-items: center;
     text-align: justify;
+
+    margin-bottom: 3rem;
   }
 `;
 
