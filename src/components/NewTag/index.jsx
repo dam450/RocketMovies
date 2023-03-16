@@ -2,10 +2,17 @@ import { FiX, FiPlus } from 'react-icons/fi'
 
 import { Container } from './styles'
 
-export function NewTag({ isNew, value, onClick, ...rest }) {
+export function NewTag({ isNew, value, type = 'text', onClick, ...rest }) {
   return (
     <Container isNew={isNew}>
-      <input value={value} {...rest} readOnly={!isNew} />
+      <input
+        type={type}
+        value={value}
+        {...rest}
+        readOnly={!isNew}
+        maxLength="18"
+        size="12"
+      />
 
       <button
         onClick={onClick}
