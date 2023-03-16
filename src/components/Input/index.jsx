@@ -5,7 +5,7 @@ export function Input({ icon: Icon, ...rest }) {
     <Container>
       <label htmlFor=""></label>
       {Icon && <Icon size={20} />}
-      <input {...rest} />
+      <input {...rest} /><span></span>
     </Container>
   );
 }

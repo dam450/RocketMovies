@@ -28,9 +28,26 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.WHITE_100};
     font-size: 1.4rem;
     line-height: 1.8rem;
+
+    &:invalid:placeholder-shown + span::after {
+      content: '';
+      padding-left: 5px;
+      color: red;
+    }
+
+    &:invalid + span::after {
+      content: '✖';
+      padding-left: 5px;
+      color: red;
+    }
+
+    /* &:valid + span::after {
+      content: '✓';
+      padding-left: 5px;
+    } */
   }
 
   > svg {
     color: ${({ theme }) => theme.COLORS.GRAY_300};
   }
-`;
+`
