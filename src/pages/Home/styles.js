@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.main`
-  max-width: 113rem;
+  max-width: 120rem;
   margin: 0 auto;
 
   padding: 0 2rem;
@@ -22,6 +22,8 @@ export const Content = styled.main`
   grid-area: content;
 
   > header {
+    width: min(70vw, 98rem);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,17 +38,19 @@ export const Content = styled.main`
       color: ${({ theme }) => theme.COLORS.WHITE_900};
     }
   }
-`;
+`
 
 export const MovieList = styled.div`
+  width: min(75vw, 100rem);
   display: flex;
   flex-direction: column;
   height: 60vh;
-  overflow-y: scroll;
+  overflow-y: overlay;
+  overflow-x: hidden;
   padding-right: 1rem;
   gap: 2.4rem;
   margin-bottom: 1rem;
-`;
+`
 
 export const Movie = styled(Link)`
   *:focus-visible {
@@ -59,6 +63,7 @@ export const Movie = styled(Link)`
   margin: 3px;
 
   height: fit-content;
+  width: min(70vw, 98rem);
 
   background: ${({ theme }) => theme.COLORS.BACKGROUND_600};
   color: ${({ theme }) => theme.COLORS.GRAY_400};
