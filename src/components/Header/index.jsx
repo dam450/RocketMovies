@@ -1,21 +1,33 @@
-import { FiSearch } from 'react-icons/fi'
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
-import { Input } from '@/components/Input';
-import { UserPic } from '@/components/UserPic';
+import { Input } from '@/components/Input'
+import { UserPic } from '@/components/UserPic'
 import Logo from '@/assets/clapperboard.svg'
-import { useAuth } from '@/hooks/auth'
+import { FiSearch } from 'react-icons/fi'
 
+import { useAuth } from '@/hooks/auth'
+import { useSearch } from '@/hooks/search'
 import { getAvatarURL } from '@/utils/getAvatarURL'
 
-import { Container, Profile } from './styles';
+import { Container, Profile } from './styles'
 
 export function Header() {
   const { signOut, user } = useAuth()
+  const { setSearch } = useSearch()
+
+  const [ searchInput, setSearchInput ] = useState('')
+
+  const navigate = useNavigate()
 
   function handleLogout() {
     signOut()
+    navigate('/')
   }
+
+  useEffect(() => {
+    setSearch( searchInput )
+  }, [ searchInput ])
 
   const avatarURL = getAvatarURL(user.avatar)
 
@@ -25,7 +37,13 @@ export function Header() {
         <img src={Logo} alt="logo" />
         RocketMovies
       </h1>
-      <Input type='search' placeholder="Pesquisar pelo título" icon={FiSearch} />
+      <Input
+        type="search"
+        placeholder="Pesquisar pelo título"
+        icon={FiSearch}
+        value={searchInput}
+        onChange={e => setSearchInput(e.target.value)}
+      />
       <Profile>
         <div>
           <Link title="Abrir perfil" to="/profile">
