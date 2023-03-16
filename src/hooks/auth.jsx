@@ -48,11 +48,13 @@ function AuthProvider({ children }) {
       }
 
       await api.put(`/users`, user)
-      localStorage.setItem('@rocketmovies:user', JSON.stringify(user))
       setData({ user, token: data.token })
+      delete user.password
+      delete user.new_password
+      localStorage.setItem('@rocketmovies:user', JSON.stringify(user))
 
     } catch (error) {
-      console.log(error)
+
       if (error.response) {
         alert(error.response.data.message)
       } else {
