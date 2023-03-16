@@ -9,13 +9,15 @@ import { Stars } from '@/components/Stars';
 import { TagGray } from '@/components/Tag';
 
 import { api } from '@/services/api';
+import { useSearch } from '@/hooks/search';
 
 export function Home() {
-  const [movies, setMovies] = useState([]);
+  const [ movies, setMovies ] = useState([]);
+  const { search } = useSearch()
 
-  function fetchMovies() {
+  function fetchMovies(title = '') {
     api
-      .get(`/movies`)
+      .get(`/movies?title=${title}`)
       .then(response => response.data)
       .then(movies => {
         setMovies(movies)
@@ -25,38 +27,38 @@ export function Home() {
   }
 
   useEffect(() => {
-    fetchMovies()
-  }, [])
+    fetchMovies(search)
+  }, [search])
 
   return (
     <Container>
-      <Header />
+        <Header />
 
-      <Content>
-        <header>
-          <h2>Meus filmes</h2>
-          <ButtonLink title="Adicionar filme" icon={FiPlus} to="/create" />
-        </header>
+        <Content>
+          <header>
+            <h2>Meus filmes</h2>
+            <ButtonLink title="Adicionar filme" icon={FiPlus} to="/create" />
+          </header>
 
-        <MovieList>
-          {movies &&
-            movies.map(movie => (
-              <Movie to={`/preview/${movie.id}`} key={movie.id}>
-                <h3>{movie.title}</h3>
-                <Stars
-                  className="small"
-                  readonly
-                  initialRating={movie.rating}
-                />
-                <p>{movie.description}</p>
-                {movie.tags &&
-                  movie.tags.map(tag => (
-                    <TagGray key={tag.id} value={tag.name} />
-                  ))}
-              </Movie>
-            ))}
-        </MovieList>
-      </Content>
+          <MovieList>
+            {movies &&
+              movies.map(movie => (
+                <Movie to={`/preview/${movie.id}`} key={movie.id}>
+                  <h3>{movie.title}</h3>
+                  <Stars
+                    className="small"
+                    readonly
+                    initialRating={movie.rating}
+                  />
+                  <p>{movie.description}</p>
+                  {movie.tags &&
+                    movie.tags.map(tag => (
+                      <TagGray key={tag.id} value={tag.name} />
+                    ))}
+                </Movie>
+              ))}
+          </MovieList>
+        </Content>
     </Container>
   )
 }
