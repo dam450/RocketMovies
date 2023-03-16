@@ -60,13 +60,16 @@ export function NewMovie() {
 
     // console.log('data:', data)
     try {
-      if (movieId) return //TODO: preparar update do filme
-      else await api.post('/movies', data)
+      if (movieId) {
+        await api.put(`/movies/${movieId}`, data)
+      } else {
+        await api.post('/movies', data)
+      }
     } catch (error) {
       console.log('error:', error)
     }
-    alert('Filme adicionado com sucesso!')
-    navigate(-1)
+    alert('Filme salvo com sucesso!')
+    navigate('/')
   }
 
   function handleDeleteMovie() {
