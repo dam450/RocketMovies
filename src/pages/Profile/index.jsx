@@ -25,14 +25,16 @@ export function Profile() {
   async function handleUpdateProfile(e) {
     e.preventDefault()
 
-    const user = {
+    const userNewInfo = {
       name,
       email,
       password: currentPassword,
-      new_password: newPassword
+      new_password: newPassword,
     }
 
-    await updateUser({ user, avatarFile })
+    const userUpdated = Object.assign(user, userNewInfo)
+
+    await updateUser({ user: userUpdated, avatarFile })
 
     setCurrentPassword('')
     setNewPassword('')
